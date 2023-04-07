@@ -1,0 +1,7 @@
+https://github.com/mmohamed/kafka-kubernetes/tree/dev/zookeeper
+
+1. 將Dockerfile中的amd64改為arm64，將keyserver從ha.pool.sks-keyservers.net改為pgp.mit.edu
+2. 將statefulset.yaml中的replica及命令中的server數都改為3
+3. 安裝
+$ kubectl apply --context arn:aws:eks:ap-south-1:xxxxxxxxxxxx:cluster/raiders-rumble-staging --namespace infrastructure -f zookeeper/statefulset.yaml
+$ kubectl apply --context arn:aws:eks:ap-south-1:xxxxxxxxxxxx:cluster/xxxxx-staging --namespace infrastructure -f zookeeper/service.yaml
